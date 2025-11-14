@@ -391,6 +391,16 @@ export class EventSetupComponent implements OnInit {
     eventName: "14th Engimach",
     logo: null as File | null,
     banner: null as File | null,
+    welcomeMessage: "Over the years, ENGIMACH has been one of the prime contributors to the development of the machine tools industry, that enables its participants and visitors with cutting edge and power house technology that stands for engineering excellence, innovation, quality and reliability. ENGIMACH is not just a trade show but a platform to see, understand and learn where the industry is heading to. The showcase at ENGIMACH shall offer a quintessential launch pad for new ideas, products and services, a conducive environment for forging joint ventures, collaborations and an open marketplace to source ideal solutions with an anticipated 1,00,000 visitors and beneficiaries",
+    bannerType: "Banner",
+    visibility: "Public",
+    startDate: "15/05/2023",
+    endDate: "31/05/2023",
+    timeZone: "(GMT+05:30) Mumbai",
+    venue: "Exhibition Centre, Swarnim Park, Near Jilla panchayat, Sector 17, Gandhinagar, Gujarat 382016",
+    city: "Gandhinagar",
+    state: "Gujarat",
+    country: "India",
   };
 
   logoPreview: string | null = null;
