@@ -2754,8 +2754,11 @@ export class EventSetupComponent implements OnInit {
   }
 
   onAboutSave(aboutData: any) {
-    console.log("About content saved:", aboutData);
-    this.editAboutContent = false;
+    if (aboutData && aboutData.title && aboutData.description) {
+      this.aboutTitle = aboutData.title;
+      this.aboutDescription = aboutData.description;
+      this.editAboutContent = false;
+    }
   }
 
   loadExhibitors() {
