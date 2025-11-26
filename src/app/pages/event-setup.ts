@@ -2090,10 +2090,10 @@ const EVENT_OVERVIEW_ICON = `<svg width="22" height="22" viewBox="0 0 22 22" fil
                   <button
                     (click)="onNext()"
                     class="flex items-center gap-2 px-5 py-2 bg-[#009FD8] hover:bg-[#0385b5] text-white rounded font-semibold transition-colors"
-                    [disabled]="activeFeatures.length === 0"
+                    [disabled]="selectedFeatureIndex >= activeFeatures.length - 1"
                     [ngClass]="{
                       'opacity-50 cursor-not-allowed':
-                        activeFeatures.length === 0,
+                        selectedFeatureIndex >= activeFeatures.length - 1,
                     }"
                   >
                     <span>Next</span>
