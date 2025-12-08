@@ -925,8 +925,10 @@ export class AddSponsorsModalComponent {
 
   onDocumentChange(event: Event): void {
     const input = event.target as HTMLInputElement;
-    if (input.files && input.files[0]) {
-      this.formData.documentName = input.files[0].name;
+    if (input.files) {
+      this.formData.documentNames = Array.from(input.files).map(
+        (file) => file.name,
+      );
     }
   }
 
@@ -939,9 +941,13 @@ export class AddSponsorsModalComponent {
     event.preventDefault();
     event.stopPropagation();
     const files = event.dataTransfer?.files;
-    if (files && files.length > 0) {
-      this.formData.documentName = files[0].name;
+    if (files) {
+      this.formData.documentNames = Array.from(files).map((file) => file.name);
     }
+  }
+
+  removeDocument(index: number): void {
+    this.formData.documentNames.splice(index, 1);
   }
 
   onSubmit(): void {
