@@ -3503,6 +3503,7 @@ export class EventSetupComponent implements OnInit {
   informationToDelete: string | null = null;
   sponsorToDelete: string | null = null;
   socialMediaToDelete: string | null = null;
+  galleryImageToDelete: string | null = null;
   editingSocialMedia: SocialMediaEntry | null = null;
   editingGalleryImage: GalleryImage | null = null;
   aboutTitle: string = "About ENGIMACH 2023";
@@ -4035,6 +4036,9 @@ export class EventSetupComponent implements OnInit {
     } else if (this.socialMediaToDelete) {
       this.socialMediaService.deleteSocialMedia(this.socialMediaToDelete);
       this.loadSocialMedia();
+    } else if (this.galleryImageToDelete) {
+      this.imageGalleryService.deleteGalleryImage(this.galleryImageToDelete);
+      this.loadGalleryImages();
     }
     this.closeDeleteModal();
   }
@@ -4047,6 +4051,7 @@ export class EventSetupComponent implements OnInit {
     this.informationToDelete = null;
     this.sponsorToDelete = null;
     this.socialMediaToDelete = null;
+    this.galleryImageToDelete = null;
   }
 
   openExhibitorModal() {
@@ -4276,10 +4281,8 @@ export class EventSetupComponent implements OnInit {
   }
 
   deleteGalleryImage(id: string) {
-    if (confirm("Are you sure you want to delete this image?")) {
-      this.imageGalleryService.deleteGalleryImage(id);
-      this.loadGalleryImages();
-    }
+    this.galleryImageToDelete = id;
+    this.isDeleteModalOpen = true;
   }
 
   deleteSocialMedia(id: string) {
