@@ -100,7 +100,9 @@ import { GalleryImage } from "../services/image-gallery.service";
               <div class="space-y-6">
                 <!-- Name Field -->
                 <div>
-                  <label class="block text-base font-medium text-[#212529] mb-2">
+                  <label
+                    class="block text-base font-medium text-[#212529] mb-2"
+                  >
                     Name
                   </label>
                   <input
@@ -113,7 +115,9 @@ import { GalleryImage } from "../services/image-gallery.service";
 
                 <!-- Image Gallery For Dropdown -->
                 <div>
-                  <label class="block text-base font-medium text-[#212529] mb-2">
+                  <label
+                    class="block text-base font-medium text-[#212529] mb-2"
+                  >
                     Image Gallery For
                   </label>
                   <select
@@ -161,10 +165,7 @@ import { GalleryImage } from "../services/image-gallery.service";
                 [class.border-[#009FD8] bg-blue-50]="isDragging"
               >
                 <!-- Uploaded Images Gallery (shown when images exist) -->
-                <div
-                  *ngIf="productImagePreviews.length > 0"
-                  class="w-full"
-                >
+                <div *ngIf="productImagePreviews.length > 0" class="w-full">
                   <div class="flex flex-wrap gap-4 justify-start">
                     <div
                       *ngFor="let image of productImagePreviews; let i = index"
@@ -178,7 +179,9 @@ import { GalleryImage } from "../services/image-gallery.service";
                       <!-- Delete Button -->
                       <button
                         type="button"
-                        (click)="removeProductImage(i); $event.stopPropagation()"
+                        (click)="
+                          removeProductImage(i); $event.stopPropagation()
+                        "
                         class="absolute -top-3 -right-3 w-6 h-6 bg-white border border-[#878A99] rounded-full flex items-center justify-center hover:bg-red-50 transition-colors shadow-md"
                         aria-label="Remove image"
                       >
@@ -421,8 +424,7 @@ export class AddImageGalleryModalComponent {
           this.formData.thumbnailImageUrl ||
           "",
         caption: this.formData.caption || undefined,
-        thumbnailImageUrl:
-          this.formData.thumbnailImageUrl || undefined,
+        thumbnailImageUrl: this.formData.thumbnailImageUrl || undefined,
         imageGalleryFor: this.formData.imageGalleryFor || undefined,
         viewMoreUrl: this.formData.viewMoreUrl || undefined,
         productImageUrls:
