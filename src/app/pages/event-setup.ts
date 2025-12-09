@@ -3967,15 +3967,6 @@ export class EventSetupComponent implements OnInit {
     this.isDeleteModalOpen = true;
   }
 
-  confirmDeleteSocialMedia() {
-    if (this.socialMediaToDelete) {
-      this.socialMediaService.deleteSocialMedia(this.socialMediaToDelete);
-      this.loadSocialMedia();
-      this.socialMediaToDelete = null;
-      this.isDeleteModalOpen = false;
-    }
-  }
-
   formatTime(timeString: string): string {
     if (!timeString) return "";
     const [hours, minutes] = timeString.split(":");
