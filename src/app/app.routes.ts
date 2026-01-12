@@ -9,6 +9,7 @@ import { EventManagersComponent } from "./pages/event-managers";
 import { EventDashboardComponent } from "./pages/event-dashboard";
 import { EventSetupComponent } from "./pages/event-setup";
 import { EventOverviewComingSoonComponent } from "./pages/event-overview-coming-soon";
+import { TestimonialsComponent } from "./pages/testimonials";
 
 export const routes: Routes = [
   {
@@ -56,6 +57,10 @@ export const routes: Routes = [
   {
     path: "event-managers",
     component: EventManagersComponent,
+  },
+  {
+    path: "testimonials",
+    component: TestimonialsComponent,
   },
   {
     path: "manage-profile",

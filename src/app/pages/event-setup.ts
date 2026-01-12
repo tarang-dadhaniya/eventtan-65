@@ -3193,6 +3193,146 @@ const EVENT_OVERVIEW_ICON = `<svg width="22" height="22" viewBox="0 0 22 22" fil
                     </div>
                   </div>
 
+                  <!-- Testimonials Feature Content -->
+                  <div
+                    *ngIf="
+                      activeFeatures.length > 0 &&
+                      activeFeatures[selectedFeatureIndex] === 'testimonials'
+                    "
+                  >
+                    <div class="flex flex-col gap-0">
+                      <!-- Header Container with Title and Controls -->
+                      <div
+                        class="bg-[#F5F5F5] border border-[#CED4DA] rounded-t-md"
+                      >
+                        <div
+                          class="flex items-center justify-between px-6 py-4 gap-6"
+                        >
+                          <h2
+                            class="text-xl font-medium text-[#686868] whitespace-nowrap"
+                          >
+                            Testimonials
+                          </h2>
+
+                          <div
+                            class="flex-1 flex items-center justify-end gap-3"
+                          >
+                            <!-- Search Bar -->
+                            <div class="relative">
+                              <input
+                                type="text"
+                                placeholder="Search"
+                                class="h-11 pl-5 pr-11 border border-[#DADADA] rounded text-base font-medium placeholder-[#878A99] focus:outline-none focus:border-[#049AD0] bg-[#FBFBFB] transition-colors"
+                                style="width: 220px;"
+                              />
+                              <svg
+                                class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#B1B1B1] pointer-events-none"
+                                fill="none"
+                                viewBox="0 0 18 18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9 0C13.9705 0 17.9998 4.02959 18 9C18 13.9706 13.9706 18 9 18C4.02959 17.9998 0 13.9705 0 9C0.000175931 4.0297 4.0297 0.000175935 9 0ZM9 1.5C4.85812 1.50018 1.50018 4.85812 1.5 9C1.5 13.142 4.85801 16.4998 9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.4998 4.85801 13.142 1.5 9 1.5Z"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                            </div>
+
+                            <!-- Add Testimonials Button -->
+                            <button
+                              class="flex items-center gap-2 px-4 h-11 border border-[#049AD0] rounded font-semibold text-sm text-white bg-[#009FD8] hover:bg-[#0385b5] transition-colors whitespace-nowrap"
+                            >
+                              <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M12 5V19"
+                                  stroke="white"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                                <path
+                                  d="M5 12H19"
+                                  stroke="white"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                              <span>Add Testimonials</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Table -->
+                      <div
+                        class="border border-[#CED4DA] border-t-0 rounded-b-md overflow-hidden"
+                      >
+                        <!-- Table Header Row -->
+                        <div
+                          class="bg-white border-b border-[#CED4DA] grid grid-cols-[70px_1fr_200px_180px_180px_100px] px-6 py-4 gap-4"
+                        >
+                          <div
+                            class="text-[#181C32] font-bold text-base text-center"
+                          >
+                            Sr. No
+                          </div>
+                          <div class="text-[#181C32] font-bold text-base">
+                            Name
+                          </div>
+                          <div class="text-[#181C32] font-bold text-base">
+                            Company
+                          </div>
+                          <div class="text-[#181C32] font-bold text-base">
+                            Designation
+                          </div>
+                          <div class="text-[#181C32] font-bold text-base">
+                            Testimonials For
+                          </div>
+                          <div
+                            class="text-[#181C32] font-bold text-base text-center"
+                          >
+                            Action
+                          </div>
+                        </div>
+
+                        <!-- Table Body - Empty State -->
+                        <div
+                          class="bg-white min-h-80 flex items-center justify-center"
+                        >
+                          <div class="text-center py-16">
+                            <svg
+                              width="64"
+                              height="64"
+                              viewBox="0 0 32 32"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="mx-auto mb-4 opacity-20"
+                            >
+                              <path
+                                d="M16 2C8.26801 2 2 8.26801 2 16C2 23.732 8.26801 30 16 30C23.732 30 30 23.732 30 16C30 8.26801 23.732 2 16 2ZM16 4C22.6514 4 28 9.34864 28 16C28 22.6514 22.6514 28 16 28C9.34864 28 4 22.6514 4 16C4 9.34864 9.34864 4 16 4ZM15 8V10H17V8H15ZM15 12V22H17V12H15Z"
+                                fill="#CED4DA"
+                              />
+                            </svg>
+                            <p class="text-lg font-medium text-[#686868] mb-2">
+                              No Testimonials Added
+                            </p>
+                            <p class="text-sm text-[#878A99]">
+                              Click "Add Testimonials" to create your first
+                              testimonial
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   <!-- Other Features Placeholder -->
                   <div
                     *ngIf="
@@ -3204,7 +3344,9 @@ const EVENT_OVERVIEW_ICON = `<svg width="22" height="22" viewBox="0 0 22 22" fil
                       activeFeatures[selectedFeatureIndex] !== 'speakers' &&
                       activeFeatures[selectedFeatureIndex] !== 'sponsors' &&
                       activeFeatures[selectedFeatureIndex] !== 'social-media' &&
-                      activeFeatures[selectedFeatureIndex] !== 'image-gallery'
+                      activeFeatures[selectedFeatureIndex] !==
+                        'image-gallery' &&
+                      activeFeatures[selectedFeatureIndex] !== 'testimonials'
                     "
                     class="flex flex-col items-center justify-center py-16 text-center"
                   >
