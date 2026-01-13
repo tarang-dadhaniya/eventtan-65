@@ -584,9 +584,24 @@ export class AddTestimonialsModalComponent {
   }
 
   onSubmit(): void {
+    // Validate that at least required fields are filled
+    if (!this.formData.firstName?.trim() || !this.formData.company?.trim() || !this.formData.designation?.trim()) {
+      alert('Please fill in First Name, Company, and Designation fields.');
+      return;
+    }
+
     this.submit.emit({ ...this.formData, profilePreview: this.profilePreview });
     this.resetForm();
     this.close.emit();
+  }
+
+  onKeyDownEnter(event: KeyboardEvent): void {
+    // Prevent form submission on Enter key in input fields
+    if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) {
+      if (event.target.tagName === 'INPUT' && (event.target as HTMLInputElement).type !== 'submit') {
+        event.preventDefault();
+      }
+    }
   }
 
   onCancel(): void {
