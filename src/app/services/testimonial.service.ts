@@ -148,7 +148,15 @@ export class TestimonialService {
     try {
       const stored = localStorage.getItem('app_testimonials');
       if (stored) {
-        this.testimonials = JSON.parse(stored);
+        const parsed = JSON.parse(stored);
+        // Filter out any empty or invalid testimonials
+        this.testimonials = parsed.filter((t: Testimonial) =>
+          t && t.name && t.name.trim().length > 0 &&
+          t.company && t.company.trim().length > 0 &&
+          t.designation && t.designation.trim().length > 0
+        );
+        // Reorder after filtering
+        this.reorderTestimonials();
         this.testimonialsSubject.next([...this.testimonials]);
       }
     } catch (error) {
